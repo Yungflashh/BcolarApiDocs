@@ -1,155 +1,256 @@
-<html>
-    <head>
-      <title>BColar Documentation</title>
-      <style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B-COLAR API  Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
-          line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
         }
-        h1, h2 {
-          color: #2c3e50;
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
         }
-        code {
-          display: block;
-          background-color: #f4f4f4;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 14px;
-          margin-bottom: 10px;
+
+        h2 {
+            color: #2C3E50;
+            font-size: 26px;
+            margin-bottom: 10px;
         }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
         .endpoint {
-          margin-bottom: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            transition: transform 0.3s ease;
         }
+
+        .endpoint:hover {
+            transform: translateY(-5px);
+        }
+
+        .endpoint .url {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 18px;
+        }
+
+        .endpoint pre {
+            background-color: #2C3E50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .endpoint .response {
+            background-color: #EAEAEA;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .code-block {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            margin-top: 10px;
+        }
+
         .example {
-          background-color: #f9f9f9;
-          padding: 10px;
-          border-left: 5px solid #2ecc71;
+            font-style: italic;
+            font-size: 14px;
+            color: #7f8c8d;
         }
-      </style>
-    </head>
-    <body>
-      <h1>BColar API Documentation</h1>
-      
-      <div class="endpoint">
+
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> B_COLAR API Documentation</h1>
+
+    <!-- POST - Register Artisan -->
+    <div class="endpoint">
         <h2>POST - Register Artisan</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/register</code></p>
-        <p><strong>Request:</strong></p>
-        <pre>'https://backend-bcolar.onrender.com/api/auth/register' \
---header 'Accept: application/json' \
---form 'name="uregu"' \
---form 'email="mirabelureg1u@gmail.com"' \
---form 'phone="09012130381"' \
---form 'password="@Uregu1234"' \
---form 'regionLGA="lagos,Nigeria"' \
---form 'user_type="artisan"' \
---form 'state="benue"' \
---form 'officeAddress="49, adebiyi"' \
---form 'dateOfBirth="4th june"' \
---form 'gender="female"' \
---form 'idCard= an image url or file' \
---form 'skill="baker"'</pre>
-        <p><strong>Response:</strong></p>
-        <pre>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/register</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>name:</strong> uregu</p>
+            <p><strong>email:</strong> mirabelureg1u@gmail.com</p>
+            <p><strong>phone:</strong> 09012130381</p>
+            <p><strong>password:</strong> @Uregu1234</p>
+            <p><strong>regionLGA:</strong> lagos, Nigeria</p>
+            <p><strong>user_type:</strong> artisan</p>
+            <p><strong>state:</strong> benue</p>
+            <p><strong>officeAddress:</strong> 49, adebiyi</p>
+            <p><strong>dateOfBirth:</strong> 4th june</p>
+            <p><strong>gender:</strong> female</p>
+            <p><strong>idCard:</strong> an image URL or file</p>
+            <p><strong>skill:</strong> baker</p>
+        </div>
+        <div class="response">
+            <strong>Response:</strong>
+            <pre>
 {
-  "message": "Registration successful. Check your email for OTP."
+    "message": "Registration successful. Check your email for OTP."
 }
-        </pre>
-      </div>
+            </pre>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- POST - Register User -->
+    <div class="endpoint">
         <h2>POST - Register User</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/register</code></p>
-        <p><strong>Request:</strong></p>
-        <pre>
-name: mimi
-email: aitmacelina@gmail.com
-phone: 07017569229
-password: @Mimi1234
-regionLGA: lagos,Nigeria
-user_type: user
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/register</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>name:</strong> mimi</p>
+            <p><strong>email:</strong> aitmacelina@gmail.com</p>
+            <p><strong>phone:</strong> 07017569229</p>
+            <p><strong>password:</strong> @Mimi1234</p>
+            <p><strong>regionLGA:</strong> lagos, Nigeria</p>
+            <p><strong>user_type:</strong> user</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- POST - Verify OTP -->
+    <div class="endpoint">
         <h2>POST - Verify OTP</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/otp/verify-otp</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-{
-  "email": "mirabelureg1u@gmail.com",
-  "otp":"291734",
-  "type":"register"
-}
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/otp/verify-otp</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>email:</strong> mirabelureg1u@gmail.com</p>
+            <p><strong>otp:</strong> 291734</p>
+            <p><strong>type:</strong> register</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- POST - Login -->
+    <div class="endpoint">
         <h2>POST - Login</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/login</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-{
-  "email":"mirabelureg1u@gmail.com",
-  "password":"@Uregu1234"
-}
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/login</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>email:</strong> mirabelureg1u@gmail.com</p>
+            <p><strong>password:</strong> @Uregu1234</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- POST - Forgot Password -->
+    <div class="endpoint">
         <h2>POST - Forgot Password</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/forgetPassword</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-{
-  "email": "adaobuno@gmail.com"
-}
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/forgetPassword</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>email:</strong> adaobuno@gmail.com</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- GET - Logout -->
+    <div class="endpoint">
         <h2>GET - Logout</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/logout</code></p>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/logout</span></p>
+    </div>
 
-      <div class="endpoint">
+    <!-- POST - Reset Password -->
+    <div class="endpoint">
         <h2>POST - Reset Password</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/resetPassword</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-{
-  "email": "adaobuno@gmail.com",
-  "password":"12345678"
-}
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/auth/resetPassword</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>email:</strong> adaobuno@gmail.com</p>
+            <p><strong>password:</strong> 12345678</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- GET - Logged-in Status -->
+    <div class="endpoint">
         <h2>GET - Logged-in Status</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/loginstatus</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-{
-  "email":"aitmacelina@gmail.com",
-  "password":"@Mimi1234"
-}
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/profile/loginstatus</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>email:</strong> aitmacelina@gmail.com</p>
+            <p><strong>password:</strong> @Mimi1234</p>
+        </div>
+    </div>
 
-      <div class="endpoint">
+    <!-- GET - Get User -->
+    <div class="endpoint">
         <h2>GET - Get User</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/getuser</code></p>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/profile/getuser</span></p>
+    </div>
 
-      <div class="endpoint">
+    <!-- PATCH - Update User -->
+    <div class="endpoint">
         <h2>PATCH - Update User</h2>
-        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/updateuser</code></p>
-        <p><strong>Example:</strong></p>
-        <pre>
-name: mirabel uregu
-avatar: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...
-        </pre>
-      </div>
+        <p><strong>URL:</strong> <span class="url">https://backend-bcolar.onrender.com/api/profile/updateuser</span></p>
+        <p><strong>Request Body:</strong></p>
+        <div class="code-block">
+            <p><strong>name:</strong> mirabel uregu</p>
+            <p><strong>avatar:</strong> data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...</p>
+        </div>
+    </div>
 
-    </body>
-  </html>
+    <div class="button-container">
+        <a href="https://backend-bcolar.onrender.com" class="button">Visit API</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Backend Bcolar. All rights reserved. Marcelina</p>
+    </footer>
+</body>
+
+</html>
