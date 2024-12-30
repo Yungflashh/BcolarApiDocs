@@ -1,0 +1,155 @@
+<html>
+    <head>
+      <title>BColar Documentation</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          line-height: 1.6;
+        }
+        h1, h2 {
+          color: #2c3e50;
+        }
+        code {
+          display: block;
+          background-color: #f4f4f4;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        .endpoint {
+          margin-bottom: 30px;
+        }
+        .example {
+          background-color: #f9f9f9;
+          padding: 10px;
+          border-left: 5px solid #2ecc71;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>BColar API Documentation</h1>
+      
+      <div class="endpoint">
+        <h2>POST - Register Artisan</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/register</code></p>
+        <p><strong>Request:</strong></p>
+        <pre>'https://backend-bcolar.onrender.com/api/auth/register' \
+--header 'Accept: application/json' \
+--form 'name="uregu"' \
+--form 'email="mirabelureg1u@gmail.com"' \
+--form 'phone="09012130381"' \
+--form 'password="@Uregu1234"' \
+--form 'regionLGA="lagos,Nigeria"' \
+--form 'user_type="artisan"' \
+--form 'state="benue"' \
+--form 'officeAddress="49, adebiyi"' \
+--form 'dateOfBirth="4th june"' \
+--form 'gender="female"' \
+--form 'idCard= an image url or file' \
+--form 'skill="baker"'</pre>
+        <p><strong>Response:</strong></p>
+        <pre>
+{
+  "message": "Registration successful. Check your email for OTP."
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>POST - Register User</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/register</code></p>
+        <p><strong>Request:</strong></p>
+        <pre>
+name: mimi
+email: aitmacelina@gmail.com
+phone: 07017569229
+password: @Mimi1234
+regionLGA: lagos,Nigeria
+user_type: user
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>POST - Verify OTP</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/otp/verify-otp</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+{
+  "email": "mirabelureg1u@gmail.com",
+  "otp":"291734",
+  "type":"register"
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>POST - Login</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/login</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+{
+  "email":"mirabelureg1u@gmail.com",
+  "password":"@Uregu1234"
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>POST - Forgot Password</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/forgetPassword</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+{
+  "email": "adaobuno@gmail.com"
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>GET - Logout</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/logout</code></p>
+      </div>
+
+      <div class="endpoint">
+        <h2>POST - Reset Password</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/auth/resetPassword</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+{
+  "email": "adaobuno@gmail.com",
+  "password":"12345678"
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>GET - Logged-in Status</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/loginstatus</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+{
+  "email":"aitmacelina@gmail.com",
+  "password":"@Mimi1234"
+}
+        </pre>
+      </div>
+
+      <div class="endpoint">
+        <h2>GET - Get User</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/getuser</code></p>
+      </div>
+
+      <div class="endpoint">
+        <h2>PATCH - Update User</h2>
+        <p><strong>URL:</strong> <code>https://backend-bcolar.onrender.com/api/profile/updateuser</code></p>
+        <p><strong>Example:</strong></p>
+        <pre>
+name: mirabel uregu
+avatar: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...
+        </pre>
+      </div>
+
+    </body>
+  </html>

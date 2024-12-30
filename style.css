@@ -1,0 +1,124 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.parent-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #6a5acd, #4b0082);
+    color: white;
+}
+
+.logo h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.links nav {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.links nav:hover {
+    color: #ffcc00;
+    border-top: 5px solid orange;
+    border-bottom: 5px solid orange;
+    transition: all 2s ease-in;
+}
+
+.nav-btn button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-btn button:hover {
+    background-color: #ff9900;
+    
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    padding: 40px;
+}
+
+.hero-text {
+    max-width: 50%;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-text button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.hero-text button:hover {
+    background-color: #ff9900;
+}
+
+.hero-img {
+    display: none
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .links nav {
+        margin: 0 10px;
+    }
+
+    .nav-btn button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
